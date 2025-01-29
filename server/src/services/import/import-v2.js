@@ -378,7 +378,7 @@ const updateOrCreateCollectionTypeEntry = async (
       // deprecated:
       // return strapi.entityService.update(slug, dbEntry.id, { data: omit(fileEntry, ['id']) });
       return strapi.documents(slug).update({
-        documentId: dbEntry.id,
+        documentId: dbEntry.documentId,
         data: omit(fileEntry, ['id'])
       });
     }
@@ -427,7 +427,7 @@ const updateOrCreateCollectionTypeEntry = async (
 
     if (isDatumInDefaultLocale) {
       if (!dbEntryDefaultLocaleId) {
-        // deprecated:  
+        // deprecated:
         // return strapi.entityService.create(slug, { data: fileEntry });
         return strapi.documents(slug).create({
           data: fileEntry,
@@ -452,7 +452,7 @@ const updateOrCreateCollectionTypeEntry = async (
         // deprecated:
         // return strapi.entityService.update(slug, dbEntry.id, { data: omit({ ...fileEntry }, ['id']) });
         return strapi.documents(slug).update({
-          documentId: dbEntry.id,
+          documentId: dbEntry.documentId,
           data: omit({ ...fileEntry }, ['id']),
         });
       }
@@ -485,7 +485,7 @@ const updateOrCreateSingleTypeEntry = async (
       // deprecated:
       // return strapi.entityService.update(slug, dbEntry.id, { data: omit(fileEntry, ['id']) });
       return strapi.documents(slug).update({
-        documentId: dbEntry.id,
+        documentId: dbEntry.documentId,
         data: omit(fileEntry, ['id']),
       });
     }
